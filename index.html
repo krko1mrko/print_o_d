@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Print On Demand</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css.css">
+</head>
+<body>
+
+<header>
+    <h1>Print On Demand</h1>
+
+    <div class="menu-toggle" id="menu-toggle">☰</div>
+
+    <nav id="nav">
+        <a href="#">Home</a>
+        <a href="#products">Products</a>
+        <a href="#design">Order</a>
+        <a href="#pricing">Pricing</a>
+    </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-content">
+        <h2>Create Your Own Custom Merch</h2>
+        <p>Design T-shirts, Hoodies, Mugs & Stickers and get them printed on demand.</p>
+        <a href="#design" class="btn">Start Designing</a>
+    </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="section" id="products">
+    <h2>Our Products</h2>
+    <div class="products">
+        <div class="card">
+            <img src="https://albumcovertshirts.com/wp-content/uploads/2021/01/random-access-memories-album-cover-t-shirt-black.png" alt="T-shirt">
+            <h3>T-Shirts</h3>
+            <p>High quality cotton tees with vibrant print.</p>
+        </div>
+        <div class="card">
+            <img src="https://therollingstonesshop.com/cdn/shop/files/Hoodie_0005_Hoodie_03.png?v=1731382084" alt="Hoodie">
+            <h3>Hoodies</h3>
+            <p>Cozy hoodies printed with your custom design.</p>
+        </div>
+        <div class="card">
+            <img src="https://www.pigsy.com/-805884005/Handler/Picture/PI/T/0000331_printed-mugs.png" alt="Mug">
+            <h3>Mugs</h3>
+            <p>Premium ceramic mugs with HD printing.</p>
+        </div>
+        <div class="card">
+            <img src="https://monomercy.com/cdn/shop/files/stcicker_f67f7b21-f946-4cc7-997b-eb07b903af11.png?v=1754489573&width=1946" alt="Stickers">
+            <h3>Stickers</h3>
+            <p>Waterproof vinyl stickers in custom shapes.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ORDER / DESIGNER -->
+<section class="design-section" id="design">
+    <h2>Order</h2>
+    <form>
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+
+        <select required>
+            <option value="">Select Product</option>
+            <option>T-Shirt</option>
+            <option>Hoodie</option>
+            <option>Mug</option>
+            <option>Sticker</option>
+        </select>
+
+        <!-- Upload & Live Designer -->
+        <label>Upload Your Design</label>
+        <input type="file" id="upload" accept="image/*" required>
+
+        <div class="canvas-wrapper">
+            <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab"
+                class="shirt-base"
+                alt="Shirt Mockup">
+
+            <div class="print-area" id="print-area">
+                <img id="design-image" class="design-image" />
+            </div>
+        </div>
+
+        <label>Scale</label>
+        <input type="range" id="scale-slider" min="0.2" max="2" step="0.1" value="1">
+
+        <button type="button" id="reset">Reset</button>
+
+        <textarea id="instructions" rows="4" placeholder="Special Instructions" maxlength="4000"></textarea>
+        <div id="char-counter">0 / 4000</div>
+
+        <button type="submit">Submit & Proceed to Payment</button>
+    </form>
+</section>
+
+<!-- PRICING -->
+<section class="section" id="pricing">
+    <h2>Pricing</h2>
+    <div class="pricing">
+        <div class="price-card">
+            <h3>T-Shirts</h3>
+            <div class="price">$20</div>
+        </div>
+
+        <div class="price-card">
+            <h3>Hoodies</h3>
+            <div class="price">$35</div>
+        </div>
+
+        <div class="price-card">
+            <h3>Mugs</h3>
+            <div class="price">$7</div>
+        </div>
+
+        <div class="price-card">
+            <h3>Stickers</h3>
+            <div class="price">$2 (per 100 stickers)</div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    :3
+</footer>
+
+<script src="designer.js"></script>
+
+<script>
+const toggle = document.getElementById('menu-toggle');
+const nav = document.getElementById('nav');
+
+toggle.addEventListener('click', () => {
+    nav.classList.toggle('active');
+});
+
+// Character counter for special instructions
+const instructions = document.getElementById("instructions");
+const charCounter = document.getElementById("char-counter");
+
+instructions.addEventListener("input", function() {
+    const len = instructions.value.length;
+    charCounter.textContent = `${len} / 4000`;
+});
+</script>
+
+</body>
+</html>
